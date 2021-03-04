@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import API from "../components/utils/API";
 import Search from "./Search";
+import EmployeeOrg from "./EmployeeOrg";
 
 class  EmployeeContainer extends Component {
     state = {
@@ -46,16 +47,27 @@ render() {
        
         <div>
             {this.state.results.map(emp =>(
-                
-            <p><img src={emp.picture.thumbnail} alt="thumbnail"/> {emp.name.first} {emp.name.last} {emp.email} {emp.phone} {emp.dob.age} </p>
-            ))}
+               <EmployeeOrg
+                 thumbnail={emp.picture.thumbnail}
+                 firstName={emp.name.first}
+                 lastName={emp.name.last}
+                 phone={emp.phone}
+                 email={emp.email}
+                 age={emp.dob.age}
+                 />
+                 ))}
+              
         </div>
-        </>
-               )
-           }
-           }
-           
-           export default EmployeeContainer;
+          </>
+            )
+        }
+        }
+             
+             export default EmployeeContainer;
+
+               
+
+
                
                
             
