@@ -40,24 +40,27 @@ render() {
     return (
         <>
         <div>
-            <Search value={this.state.search} handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit}
-            
-            />
-            
+        <Search value={this.state.search} handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit}/>
         </div>
+        <br></br>
+       
         <div>
             {this.state.results.map(emp =>(
-                <p>{emp.name.first}</p>
-               
-               
+                
+            <p><img src={emp.picture.thumbnail} alt="thumbnail"/> {emp.name.first} {emp.name.last} {emp.email} {emp.phone} {emp.dob.age} </p>
             ))}
-           </div>
+        </div>
         </>
+               )
+           }
+           }
+           
+           export default EmployeeContainer;
+               
+               
+            
+            
+            
        
 
         
-    )
-}
-}
-
-export default EmployeeContainer;
