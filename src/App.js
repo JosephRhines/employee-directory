@@ -1,10 +1,15 @@
 import Header from "./components/Header";
+import Search from "./components/Search";
 
 function App() {
   return (
-    <div>
-      <Header/>
+    <>
+    <Header/>
+    <div className="container">
+      
+      <Search/>
     </div>
+    </>
   );
 }
 
