@@ -1,5 +1,6 @@
 import Header from "./components/Header";
-import Search from "./components/Search";
+import EmployeeContainer from "./components/employeeWrapper";
+
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
     <br></br>
     <div className="container">
       
-      <Search/>
+      <EmployeeContainer/>
     </div>
     </>
   );
