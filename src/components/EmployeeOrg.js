@@ -3,7 +3,11 @@ import React from "react";
 
 function EmployeeOrg (props) {
     return (
+        
+     
         <div className ="container">
+            
+            
           <div className="row">
               <div className="col-md-2">
                   <p><img src={props.thumbnail} className="thumbnail"></img></p>
@@ -23,6 +27,11 @@ function EmployeeOrg (props) {
           </div>
           <hr></hr>
         </div>
+        
+        
+        
+        
+        
               
 
     )
