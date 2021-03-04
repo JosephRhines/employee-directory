@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import API from "../components/utils/API";
 import Search from "./Search";
 import EmployeeOrg from "./EmployeeOrg";
+import Titles from "./Titles";
 
 class  EmployeeContainer extends Component {
     state = {
@@ -40,11 +41,13 @@ handleFormSubmit = event => {
 render() {
     return (
         <>
-        <div>
+        <div className="container">
         <Search value={this.state.search} handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit}/>
         </div>
         <br></br>
-       
+        <div className="container">
+            <Titles/>
+        </div>
         <div>
             {this.state.results.map(emp =>(
                <EmployeeOrg
