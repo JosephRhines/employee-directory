@@ -14,7 +14,7 @@ function Titles(props){
                   <p><strong>Phone</strong></p>
               </div>
               <div className="col-md-4">
-                  <p><strong>email</strong></p>
+                  <p><strong>Email</strong></p>
               </div>
               <div className="col-md-2"onClick={() => props.sort("age")}>
                   <p><strong>Age</strong></p>
