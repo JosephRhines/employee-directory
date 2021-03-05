@@ -21,4 +21,5 @@ type a name in the search field and press enter or click the search button and c
 
 ## Links:
 https://github.com/JosephRhines/employee-directory
+https://josephrhines.github.io/employee-directory/
 
