@@ -10,7 +10,7 @@ function EmployeeOrg (props) {
             
           <div className="row">
               <div className="col-md-2">
-                  <p><img src={props.thumbnail} className="thumbnail"></img></p>
+                  <p><img src={props.thumbnail} className="thumbnail" alt="Employee Face"></img></p>
               </div>
               <div className="col-md-2">
                   <p>{props.firstName} {props.lastName}</p>
