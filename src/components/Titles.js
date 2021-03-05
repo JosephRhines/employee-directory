@@ -1,6 +1,6 @@
 import React from "react";
 
-function Titles(){
+function Titles(props){
  return(
 
 <div className="row">
@@ -16,7 +16,7 @@ function Titles(){
               <div className="col-md-4">
                   <p><strong>email</strong></p>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2"onClick={() => props.sort("age")}>
                   <p><strong>Age</strong></p>
               </div>
 

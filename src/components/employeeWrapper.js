@@ -8,19 +8,20 @@ import Titles from "./Titles";
 class  EmployeeContainer extends Component {
     state = {
         results: [],
+        organized: [],
         search: ""
     }
 
 
 componentDidMount() {
-    this.searchEmployee();
+    this.getEmployees();
 };
 
-searchEmployee = () => {
+getEmployees = () => {
     API.search()
     .then(res => {
         console.log(res.data)
-        this.setState({ results: res.data.results })})
+        this.setState({ results: res.data.results, organized: res.data.results })})
     
     .catch(err => console.log(err));
 };
@@ -38,6 +39,22 @@ handleFormSubmit = event => {
     this.searchEmployee(this.state.search);
 };
 
+searchEmployee = filter => {
+    const copy = this.state.results.filter(result =>{
+      let mystring = ""+result.email+result.dob
+      return mystring.includes(filter.toLowerCase())
+})
+    this.setState({
+        organized: copy
+    })
+}
+handlesort = (field) => {
+    this.setState({
+         organized: this.state.organized.sort((a, b) => {
+              return a[field]-b[field]
+          })
+     })
+}
 render() {
     return (
         <>
@@ -46,10 +63,10 @@ render() {
         </div>
         <br></br>
         <div className="container">
-            <Titles/>
+            <Titles sort={this.handlesort}/>
         </div>
         <div>
-            {this.state.results.map(emp =>(
+            {this.state.organized.map(emp =>(
                <EmployeeOrg
                  thumbnail={emp.picture.thumbnail}
                  firstName={emp.name.first}
@@ -57,6 +74,7 @@ render() {
                  phone={emp.phone}
                  email={emp.email}
                  age={emp.dob.age}
+                 key={emp.id}
                  />
                  ))}
               
